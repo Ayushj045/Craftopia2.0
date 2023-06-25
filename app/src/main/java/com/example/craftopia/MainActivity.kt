@@ -4,13 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.craftopia.databinding.ActivityLoginBinding
+import com.example.craftopia.DrawerUI.Feedback
+import com.example.craftopia.DrawerUI.Seller
+import com.example.craftopia.DrawerUI.Settings
 import com.example.craftopia.databinding.ActivityMainBinding
 import com.google.android.material.internal.NavigationMenuItemView
 import com.google.android.material.navigation.NavigationView
@@ -49,13 +50,22 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.user ->  {
-               Toast.makeText(this,"Rate Us", Toast.LENGTH_SHORT).show()
+               val feedback = findViewById<NavigationMenuItemView>(R.id.user)
+                feedback.setOnClickListener {
+                    val intent = Intent(this, Feedback::class.java)
+                    startActivity(intent)
+                }
             }
             R.id.order ->  {
                 Toast.makeText(this,"Your Order", Toast.LENGTH_SHORT).show()
             }
             R.id.seller ->  {
-                Toast.makeText(this,"Become a seller", Toast.LENGTH_SHORT).show()
+       //         Toast.makeText(this,"Become a seller", Toast.LENGTH_SHORT).show()
+                val seller = findViewById<NavigationMenuItemView>(R.id.seller)
+                seller.setOnClickListener {
+                    val intent = Intent(this , Seller::class.java)
+                    startActivity(intent)
+                }
             }
             R.id.setting ->  {
 //                Toast.makeText(this,"Settings", Toast.LENGTH_SHORT).show()

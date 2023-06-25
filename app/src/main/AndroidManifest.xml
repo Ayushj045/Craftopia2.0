@@ -13,7 +13,16 @@
         android:theme="@style/Theme.Craftopia"
         tools:targetApi="31">
         <activity
-            android:name=".Settings"
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".DrawerUI.Seller"
+            android:exported="false" />
+        <activity
+            android:name=".DrawerUI.Feedback"
+            android:exported="false" />
+        <activity
+            android:name=".DrawerUI.Settings"
             android:exported="false" />
         <activity
             android:name=".ItemPage"

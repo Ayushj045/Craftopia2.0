@@ -1,7 +1,8 @@
-package com.example.craftopia
+package com.example.craftopia.DrawerUI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.craftopia.R
 
 class Settings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
